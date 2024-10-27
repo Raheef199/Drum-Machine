@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Chakra+Petch&family=Nanum+Gothic+Coding:wght@400;700&family=Open+Sans:wght@400;700&family=Raleway:wght@500&family=Russo+One&family=Source+Code+Pro:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Drum Machine</title>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $(".drum-pad").click(function () {
+          $(".drum-pad").css("");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Drum Machine</h1>
+    <div class="drum-machine" id="drum-machine">
+      <div class="container">
+        <div class="display" id="display-section">
+          <div class="drum-pad" id="drum-pad-Q" onclick="playAudio('Q')">
+            <audio
+              id="audio audio-Q"
+              class="clip"
+              data-description="Heater-1"
+              src="audio/Heater-1.mp3"
+            ></audio
+            >Q
+          </div>
+          <div class="drum-pad" id="drum-pad-W" onclick="playAudio('W')">
+            <audio
+              id="audio audio-W"
+              class="clip"
+              data-description="Heater-2"
+              src="audio/Heater-2.mp3"
+            ></audio
+            >W
+          </div>
+          <div class="drum-pad" id="drum-pad-E" onclick="playAudio('E')">
+            <audio
+              id="audio audio-E"
+              class="clip"
+              data-description="Heater-3"
+              src="audio/Heater-3.mp3"
+            ></audio
+            >E
+          </div>
+          <div class="drum-pad" id="drum-pad-A" onclick="playAudio('A')">
+            <audio
+              id="audio audio-A"
+              class="clip"
+              data-description="Heater-4"
+              src="audio/Heater-4_1.mp3"
+            ></audio
+            >A
+          </div>
+          <div class="drum-pad" id="drum-pad-S" onclick="playAudio('S')">
+            <audio
+              id="audio audio-S"
+              class="clip"
+              data-description="Clap"
+              src="audio/Heater-6.mp3"
+            ></audio
+            >S
+          </div>
+          <div class="drum-pad" id="drum-pad-D" onclick="playAudio('D')">
+            <audio
+              id="audio audio-D"
+              class="clip"
+              data-description="Open HH"
+              src="audio/Dsc_Oh.mp3"
+            ></audio
+            >D
+          </div>
+          <div class="drum-pad" id="drum-pad-Z" onclick="playAudio('Z')">
+            <audio
+              id="audio audio-Z"
+              class="clip"
+              data-description="Kick N' Hat"
+              src="audio/Kick_n_Hat.mp3"
+            ></audio
+            >Z
+          </div>
+          <div class="drum-pad" id="drum-pad-X" onclick="playAudio('X')">
+            <audio
+              id="audio audio-X"
+              class="clip"
+              data-description="Kick"
+              src="audio/RP4_KICK_1.mp3"
+            ></audio
+            >X
+          </div>
+          <div class="drum-pad" id="drum-pad-C" onclick="playAudio('C')">
+            <audio
+              id="audio audio-C"
+              class="clip"
+              data-description="Closed HH"
+              src="audio/Cev_H2.mp3"
+            ></audio
+            >C
+          </div>
+        </div>
+        <div class="display-function">
+          <div class="title">
+            <p>DM</p>
+            <img src="img/coding.png" alt="Logo" />
+          </div>
+          <div class="switch">
+            <p>Power</p>
+            <div class="switch-outer">
+              <input id="checkbox" onclick="togglePower()" type="checkbox" />
+              <div class="switch-inner"></div>
+            </div>
+          </div>
+          <div class="output-box">
+            <p id="display"></p>
+          </div>
+          <div class="volume-slider">
+            <input
+              id="volume-control"
+              type="range"
+              max="1"
+              step="0.01"
+              min="0"
+              value="1"
+            />
+          </div>
+          <div class="bank">
+            <p>Bank</p>
+            <div class="bank-outer">
+              <input type="checkbox" />
+              <div class="bank-inner"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

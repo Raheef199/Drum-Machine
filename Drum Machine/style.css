@@ -1,0 +1,239 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, grey 50%, #444 50%);
+  font-family: "Russo One", sans-serif;
+}
+
+/* Drum Machine */
+h1 {
+  border-bottom: 3px solid orangered;
+  position: absolute;
+  top: 170px;
+  right: 40%;
+  font-size: 40px;
+}
+
+.drum-machine {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 235px auto;
+  position: relative;
+  width: 650px;
+  height: 350px;
+  background-color: white;
+  border: 8px solid black;
+  position: relative;
+}
+
+.drum-machine .container {
+  display: flex;
+  flex: 1;
+  flex-basis: 50%;
+  height: 350px;
+}
+
+.drum-machine .container .display {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(90px, 1fr));
+  gap: 10px;
+  margin-left: 15px;
+  padding: 20px 0;
+}
+
+.drum-machine .container .display .drum-pad {
+  background-color: rgb(78, 72, 72);
+  color: white;
+  text-align: center;
+  padding: 30px 0;
+  height: 85px;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 6px 5px 4px black;
+  font-size: 18px;
+}
+
+.drum-machine .container .display .drum-pad:hover {
+  background-color: rgb(55, 55, 55);
+}
+
+.drum-machine .container .display-function {
+  flex: 1;
+  flex-basis: 50%;
+}
+
+.drum-machine .container .display-function img {
+  height: 40px;
+  width: 40px;
+}
+
+.drum-machine .container .display-function .title {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  font-size: 35px;
+  padding: 10px;
+  height: 40px;
+}
+
+.drum-machine .container .display-function .title p {
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.drum-machine .container .display-function .switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-top: 20px;
+  height: 100px;
+  position: relative;
+}
+
+.drum-machine .container .display-function .switch .switch-outer {
+  width: 75px;
+  height: 35px;
+  background-color: black;
+  margin-top: 5px;
+  border-radius: 20px;
+  outline: 2px solid white;
+  outline-offset: -5px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.drum-machine .container .display-function .switch .switch-inner {
+  transition: 0.3s;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: orangered;
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.drum-machine .container .display-function .switch input[type=checkbox] {
+  opacity: 0;
+  width: 100%;
+  height: 90%;
+  z-index: 1;
+  position: relative;
+  left: 10px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + .switch-inner {
+  transform: translateX(41px);
+}
+
+.drum-machine .container .display-function .output-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.drum-machine .container .display-function #display {
+  width: 200px;
+  height: 50px;
+  background-color: #444;
+  font-family: inherit;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.drum-machine .container .display-function .volume-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.drum-machine .container .display-function .bank {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+}
+
+.drum-machine .container .display-function .bank .bank-outer {
+  width: 75px;
+  height: 35px;
+  background-color: black;
+  border-radius: 20px;
+  outline: 2px solid white;
+  outline-offset: -5px;
+  margin-top: 5px;
+  position: relative;
+}
+
+.drum-machine .container .display-function .bank .bank-inner {
+  transition: 0.3s;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: orangered;
+  cursor: pointer;
+  float: left;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.drum-machine .container .display-function .bank input[type=checkbox] {
+  opacity: 0;
+  width: 100%;
+  height: 90%;
+  z-index: 1;
+  position: relative;
+  left: 10px;
+  cursor: pointer;
+}
+
+input[type=checkbox]:checked + .bank-inner {
+  transform: translateX(41px);
+}
+
+input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 50%;
+  margin-top: 5px;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: black;
+  border-radius: 10px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: orangered;
+  height: 30px;
+  width: 30px;
+}
+
+::-moz-selection {
+  background-color: orangered;
+  color: white;
+}
+
+::selection {
+  background-color: orangered;
+  color: white;
+}/*# sourceMappingURL=style.css.map */
